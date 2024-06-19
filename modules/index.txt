@@ -1,0 +1,7 @@
+Móduloes: São conjuntos de código.
+
+3 tipos de módulos:
+
+-> TODOS OS ARQUIVOS JS SÃO MODULOS;
+-> NATIVOS;
+-> npm (Node Package Manager).
