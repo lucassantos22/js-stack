@@ -1,18 +1,22 @@
 const http = require('http');
+const url = require('url');
 
 const routes = require('./routes');
 
 const server = http.createServer((req, res) => {
-    console.log(`Request method: ${req.method} | Endpoint: ${req.url}`)
+    const parsedUrl = url.parse(req.url, true)
 
-    const route = routes.find(route => route.method === req.method && route.endpoint === req.url)
+    console.log(`Request method: ${req.method} | Endpoint: ${parsedUrl.pathname}`)
+
+    const route = routes.find(route => route.method === req.method && route.endpoint === parsedUrl.pathname)
 
     if (route) {
+        req.query = parsedUrl.query
         route.handler(req, res)
         return;
     }
-    res.writeHead(404, {'Content-Type': 'application/json'})
-    res.end(`Cannot ${req.method} ${req.url}`);
+    res.writeHead(404, {'Content-Type': 'text/html'})
+    res.end(`Cannot ${req.method} ${parsedUrl.pathname}`);
 })
 
 server.listen(8080, () => {
