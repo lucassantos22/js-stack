@@ -1,4 +1,4 @@
-const { listUsers, getUserById, createUser, updateUser } = require('./controllers/UserController')
+const { listUsers, getUserById, createUser, updateUser, deleteUser } = require('./controllers/UserController')
 
 module.exports = [
     {
@@ -20,5 +20,10 @@ module.exports = [
         endpoint: '/users/:id',
         method: 'PUT',
         handler: updateUser
+    },
+    {
+        endpoint: '/users/:id',
+        method: 'DELETE',
+        handler: deleteUser
     },
 ]
