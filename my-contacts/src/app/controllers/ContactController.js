@@ -1,13 +1,20 @@
+const ContactsRepository = require('../repositories/ContactsRepository')
+
 class ContractController {
-    index(req, res) {
+    async index(req, res) {
         // Listar todos os registros
-        res.json({
-            ok: true
-        })
+        const contacts = await ContactsRepository.findAll();
+        res.json({contacts})
     }
 
-    show() {
+    async show(req, res) {
         // Obter um registro
+        const { id } = req.params
+        const contact = await ContactsRepository.findById(id);
+        if (!contact) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+        res.json({ contact })
     }
 
     store() {
