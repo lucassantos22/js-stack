@@ -1,0 +1,9 @@
+docker pull NOME_IMAGEM -> Puxar imagem;
+docker rmi NOME_IMAGEM -> Remover imagem;
+docker image ls -> Trazer lista de imagens;
+docker run --name NOME_DO_CONTAINER -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -p 5432:5432 -d (rodar em background) NOME_IMAGEM;
+docker ps -> Listar containers que estão ativos;
+docker ps -a -> Lista todos os containers;
+docker stop NOME_CONTAINER -> Parar container;
+docker start NOME_CONTAINER -> Inicia container;
+docker exec -it NOME_CONTAINER -> Rodar container no bash;
