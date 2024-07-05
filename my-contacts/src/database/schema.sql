@@ -1,6 +1,7 @@
 /* docker exec -it pg bash */
+/* psql -U root -> Rodar postgres */
 /* \l -> Listar databases */
-/* \c NOME_TABELA -> Entrar em uma tabela */
+/* \c NOME_TABELA -> Entrar em uma database */
 /* \dt -> Listar tabelas */
 
 CREATE DATABASE mycontacts;
