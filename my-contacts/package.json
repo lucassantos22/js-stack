@@ -6,12 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./src/index.js",
-    "postinstall": "ls"
+    "postinstall": "ls",
+    "cleancache": "sudo npm run cache clean --force"
   },
   "author": "Lucas Santos",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
+    "pg": "^8.12.0",
     "uuid": "^10.0.0"
   },
   "devDependencies": {
