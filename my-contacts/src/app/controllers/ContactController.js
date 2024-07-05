@@ -4,7 +4,7 @@ class ContractController {
     async index(req, res) {
         // Listar todos os registros
         const contacts = await ContactsRepository.findAll();
-        res.json({contacts})
+        res.json(contacts)
     }
 
     async show(req, res) {
@@ -14,7 +14,7 @@ class ContractController {
         if (!contact) {
             return res.status(404).json({ error: 'User not found' });
         }
-        res.json({ contact })
+        res.json(contact)
     }
 
     async store(req, res) {
