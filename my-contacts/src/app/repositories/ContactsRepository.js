@@ -59,28 +59,19 @@ class ContactsRepository {
 
         return row
     }
-    update(id, {
+    async update(id, {
         name,
         email,
         phone,
         category_id
     }) {
-        return new Promise((resolve, reject) => {
-            const updatedContact = {
-                id,
-                name,
-                email,
-                phone,
-                category_id
-            }
-            contacts = contacts.map((contact) => {
-                if (contact.id === id) {
-                    return {...updatedContact}
-                }
-                return contact
-            })
-            resolve(updatedContact)
-        })
+        const [row] = await db.query(`
+            UPDATE contacts
+            SET name = $1, email = $2, phone = $3, category_id = $4
+            WHERE id = $5
+            RETURNING *
+        `, [name, email, phone, category_id, id])
+        return row
     }
 }
 
