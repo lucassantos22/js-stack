@@ -15,8 +15,7 @@ export async function POST(request: NextRequest) {
     console.log(body)
 
     console.log('id', request.nextUrl.searchParams.get('id'))
-
-    console.log('cookies', request.cookies.get(''))
+    console.log('cookies', request.cookies.get('cookie-do-lucas'))
 
     const response = NextResponse.json({ create: true }, { status: 201 })
     response.cookies.set('cookie-do-lucas', 'Cookie do Lucas')
