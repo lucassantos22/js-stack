@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import MakeForm from "./form";
 
 async function getMakes() {
     await new Promise((resolve => setTimeout(resolve, 3000)))
@@ -24,6 +25,7 @@ export default async function Makes() {
                     </Link>
                 ))}
             </div>
+            <MakeForm />
         </div>
     )
 }
