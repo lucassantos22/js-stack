@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
     console.log(reqHeaders.get('Content-Type'))
 
     return NextResponse.json({
-        message: 'Hello world'
+        makes: ['audi', 'bmw', 'mercedes']
     })
 }
 

@@ -3,8 +3,13 @@ import Link from "next/link";
 import MakeForm from "./form";
 
 async function getMakes() {
-    await new Promise((resolve => setTimeout(resolve, 3000)))
-    return ['audi', 'bmw', 'mercedes']
+    const res = await fetch('http://localhost:3000/api/cars', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    return res.json();
 }
 
 export const metadata: Metadata = {
@@ -12,12 +17,12 @@ export const metadata: Metadata = {
 }
 
 export default async function Makes() {
-    const makes = await getMakes();
+    const { makes } = await getMakes();
     return (
         <div>
             <h1 className="mb-10 font-xlg">Marcas</h1>
             <div className='grid grid-cols-5 gap-4'>
-                {makes.map((make) => (
+                {makes.map((make: string) => (
                     <Link href={`/makes/${make}`} key={make}>
                         <div className="rounded-lg bg-zinc-900 border border-zinc-700 grid place-items-center h-56">
                             {make}
