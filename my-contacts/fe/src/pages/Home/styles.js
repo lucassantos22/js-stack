@@ -43,7 +43,7 @@ export const Header = styled.div`
         border: 2px solid ${props => props.theme.colors.primary.main};
         padding: 8px 16px;
         border-radius: 4px;
-        transition: all 0.2s ease-in;
+        transition: all 0.1s ease-in;
 
         &:hover {
             background-color: ${props => props.theme.colors.primary.main};
