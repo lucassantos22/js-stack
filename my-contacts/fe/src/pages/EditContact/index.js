@@ -1,5 +1,7 @@
+import PageHeader from "../../components/PageHeader"
+
 export default function EditContact() {
     return (
-        'Edit'
+        <PageHeader title="Editar Lucas Santos" />
     )
 }
