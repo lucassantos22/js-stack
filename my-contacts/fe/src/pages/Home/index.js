@@ -52,12 +52,12 @@ export default function Home() {
                         <span>(48) 99999-9999</span>
                     </div>
 
-                    <div className="actions" alt="Edit">
+                    <div className="actions">
                         <a href="/">
-                            <img src={edit} />
+                            <img src={edit} alt="Edit"/>
                         </a>
-                        <button type="button" alt="Delete">
-                            <img src={trash} />
+                        <button type="button">
+                            <img src={trash} alt="Delete"/>
                         </button>
                     </div>
                 </Card>
@@ -72,12 +72,12 @@ export default function Home() {
                         <span>(48) 99999-9999</span>
                     </div>
 
-                    <div className="actions" alt="Edit">
+                    <div className="actions">
                         <a href="/">
-                            <img src={edit} />
+                            <img src={edit} alt="Edit" />
                         </a>
-                        <button type="button" alt="Delete">
-                            <img src={trash} />
+                        <button type="button">
+                            <img src={trash} alt="Delete" />
                         </button>
                     </div>
                 </Card>
