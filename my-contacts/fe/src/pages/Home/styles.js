@@ -13,7 +13,6 @@ export const InputSearchContainer = styled.div`
         border: none;
         border-radius: 25px;
         height: 50px;
-        filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.04));
         color: #bcbcbc;
         padding: 0 16px;
         outline: none;
