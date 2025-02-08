@@ -11,6 +11,7 @@ export const Input = styled.input`
     padding: 0 16px;
     font-size: 16px;
     transition: all 0.1s ease-in;
+    filter: none;
 
     &:focus {
         border: 2px solid ${props => props.theme.colors.primary.main};
