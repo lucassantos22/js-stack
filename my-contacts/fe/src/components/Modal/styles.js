@@ -22,6 +22,7 @@ export const Container = styled.div`
     width: 100%;
 
     h1 {
+        color: ${props => props.danger ? props.theme.colors.danger.main : props.theme.colors.gray[900]} !important;
         font-size: 22px;
     }
 
